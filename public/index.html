@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +12,14 @@
   <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="./style/fonts/iconfont.css">
   <link rel="stylesheet" href="./style/index.css">
-  <link rel="shortcut icon" href="#"/>
+  <link rel="shortcut icon" href="#" />
 
   <link rel="apple-touch-icon" sizes="144x144" href="./assets/images/icons/icon_144x144.png" />
   <link rel="apple-touch-icon" sizes="152x152" href="./assets/images/icons/icon_152x152.png" />
   <link rel="apple-touch-icon" sizes="192x192" href="./assets/images/icons/icon_192x192.png" />
   <link rel="apple-touch-icon" sizes="512x512" href="./assets/images/icons/icon_512x512.png" />
 </head>
+
 <body>
   <header class="header-wrapper">
     <div class="header-inner-wrapper">
@@ -31,23 +33,43 @@
     </div>
   </section>
   <script>
-            const title = 'hello';
-        const options = {
-            body: 'Simple piece of body text.\nSecond line of body text :)'
-        }
-            Notification.requestPermission().then(function (permission) {
-                if(permission === 'granted') {
-                    console.log('Notification 可用');
-                    
-                    const notification = new Notification(title, options)
-                } else if(permission === 'denied') {
-                    console.log('Notification 权限已被禁用');
-                } else {
-                    console.log('Notification 权限尚未授权');
-                }
-            })
+    const title = 'hello';
+    const options = {
+      body: 'Simple piece of body text.\nSecond line of body text :)'
+    }
+    Notification.requestPermission().then(function (permission) {
+      if (permission === 'granted') {
+        console.log('Notification 可用');
+
+        const notification = new Notification(title, options)
+      } else if (permission === 'denied') {
+        console.log('Notification 权限已被禁用');
+      } else {
+        console.log('Notification 权限尚未授权');
+      }
+    });
+  </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyChIKcpzA5uEKcO7D3hXDuuisUWh8D893Q",
+      authDomain: "pwa-push-1fdb6.firebaseapp.com",
+      databaseURL: "https://pwa-push-1fdb6-default-rtdb.firebaseio.com",
+      projectId: "pwa-push-1fdb6",
+      storageBucket: "pwa-push-1fdb6.appspot.com",
+      messagingSenderId: "183679332707",
+      appId: "1:183679332707:web:f3f7a777fd0347cd402356"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
   </script>
   <script src="./script/entry.js"></script>
 </body>
-</html>
 
+</html>

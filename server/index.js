@@ -19,7 +19,7 @@ webpush.setVapidDetails(
   VAPIDkeys.publicKey,
   VAPIDkeys.privateKey
 )
-webpush.setGCMAPIKey(GCMAPIkey)
+webpush.setGCMAPIKey(GCMAPIkey);
 
 // 存储 pushSubscription 对象
 let pushSubscriptionSet = new Set()
