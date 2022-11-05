@@ -35,13 +35,16 @@ function subscribeAndDistribute (registration) {
   if (!window.PushManager) {
     return Promise.reject('系统不支持消息推送')
   }
+  debugger
   // 检查是否已经订阅过
   return registration.pushManager.getSubscription().then(function (subscription) {
     // 如果已经订阅过，就不重新订阅了
     if (subscription) {
-      distributePushResource(subscription)
+      console.log(111);
+      // distributePushResource(subscription)
       return
     }
+    debugger
     // 如果尚未订阅则发起推送订阅
     return registration.pushManager.subscribe({
       userVisibleOnly: true,
@@ -94,6 +97,7 @@ registerServiceWorker()
   })
   // 订阅推送
   .then(function () {
+    console.log(22);
     subscribeAndDistribute(registration)
   })
   .catch(function (err) {

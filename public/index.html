@@ -33,21 +33,21 @@
     </div>
   </section>
   <script>
-    const title = 'hello';
-    const options = {
-      body: 'Simple piece of body text.\nSecond line of body text :)'
-    }
-    Notification.requestPermission().then(function (permission) {
-      if (permission === 'granted') {
-        console.log('Notification 可用');
+    // const title = 'hello';
+    // const options = {
+    //   body: 'Simple piece of body text.\nSecond line of body text :)'
+    // }
+    // Notification.requestPermission().then(function (permission) {
+    //   if (permission === 'granted') {
+    //     console.log('Notification 可用');
 
-        const notification = new Notification(title, options)
-      } else if (permission === 'denied') {
-        console.log('Notification 权限已被禁用');
-      } else {
-        console.log('Notification 权限尚未授权');
-      }
-    });
+    //     const notification = new Notification(title, options)
+    //   } else if (permission === 'denied') {
+    //     console.log('Notification 权限已被禁用');
+    //   } else {
+    //     console.log('Notification 权限尚未授权');
+    //   }
+    // });
   </script>
   <script type="module">
     // Import the functions you need from the SDKs you need
