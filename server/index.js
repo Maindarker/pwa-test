@@ -62,5 +62,5 @@ app.post('/api/push/subscribe', function (req, res) {
 
 // 启动服务器
 app.listen(port, function () {
-  console.log(`Server start on: http://127.0.0.1:${port}`)
+  console.log(`Server start on: http://localhost:${port}`)
 })
