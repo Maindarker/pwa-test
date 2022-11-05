@@ -35,22 +35,24 @@ function subscribeAndDistribute (registration) {
   if (!window.PushManager) {
     return Promise.reject('系统不支持消息推送')
   }
-  debugger
   // 检查是否已经订阅过
   return registration.pushManager.getSubscription().then(function (subscription) {
     // 如果已经订阅过，就不重新订阅了
     if (subscription) {
-      console.log(111);
-      // distributePushResource(subscription)
+      console.log('已经订阅过', subscription);
+      // subscription.unsubscribe().then(function () {
+      //   console.log('取消订阅成功！')
+      // })
+      distributePushResource(subscription)
       return
     }
-    debugger
     // 如果尚未订阅则发起推送订阅
     return registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: base64ToUint8Array(VAPIDPublicKey)
     }).then(function (subscription) {
       // 订阅推送成功之后，将订阅信息传给后端服务器
+      console.log('订阅推送成功之后，将订阅信息传给后端服务器')
       distributePushResource(subscription)
     })
   })
@@ -97,7 +99,7 @@ registerServiceWorker()
   })
   // 订阅推送
   .then(function () {
-    console.log(22);
+    console.log('订阅推送');
     subscribeAndDistribute(registration)
   })
   .catch(function (err) {
