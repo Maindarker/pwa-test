@@ -53,6 +53,7 @@ self.addEventListener('push', function (e) {
   }
   // 解析获取推送消息
   let payload = e.data.json()
+  console.log(payload, '=========11111')
   // 根据推送消息生成桌面通知并展现出来
   let promise = self.registration.showNotification(payload.title, {
     body: payload.body,

@@ -15,7 +15,7 @@ const GCMAPIkey = config.GCMAPIkey
 
 // 配置 web push
 webpush.setVapidDetails(
-  'mailto:292552698@qq.com',
+  'mailto:111@qq.com',
   VAPIDkeys.publicKey,
   VAPIDkeys.privateKey
 )

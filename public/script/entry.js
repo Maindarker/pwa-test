@@ -46,6 +46,7 @@ function subscribeAndDistribute (registration) {
       distributePushResource(subscription)
       return
     }
+    console.log(registration, '=====')
     // 如果尚未订阅则发起推送订阅
     return registration.pushManager.subscribe({
       userVisibleOnly: true,
