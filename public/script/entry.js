@@ -10,7 +10,7 @@ function registerServiceWorker () {
     return Promise.reject('系统不支持 service worker')
   }
 
-  return navigator.serviceWorker.register('/sw.js').then(function (reg) {
+  return navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(function (reg) {
     registration = reg
   })
 }
